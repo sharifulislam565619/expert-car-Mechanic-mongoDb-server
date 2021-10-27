@@ -6,7 +6,7 @@ require('dotenv').config()
 
 
 const app = express()
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors())
 app.use(express.json())
@@ -69,7 +69,7 @@ async function run() {
 run().catch(console.dir)
 
 app.get('/', (req, res) => {
-    res.send("Expert car mechanic here is")
+    res.send("Expert car mechanic here is running")
 })
 
 app.listen(port, () => {
